@@ -1,0 +1,55 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main/css/board.css') }}">
+</head>
+{% endblock %}
+
+{% block extrajs %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+{% endblock %}
+
+{% block maincontent %}
+<li class="chat-link"><a href="{{ url_for('chat', board_id=board_id) }}">Chat</a>
+</li>
+
+<h1 class="board-title">{{ board_name }}</h1>
+<h2 class="list-header">Lists:</h2>
+<ul>
+   {% for category in list_categories %}
+   <li id="list-{{ category }}" class="drop-list" data-list-id="{{ category }}">  
+    {{ category }}  
+    <div class="cards">  
+       <!-- Cards will be appended here -->  
+    </div>  
+ </li>
+ 
+   
+   <!-- Add Card button for each category -->
+   <input type="button" class="add-card-button" value="Add Card" onclick="addCardForm('{{ category }}')" title="Adding a card to the board" />
+<!-- Card container -->  
+<div id="card-container-{{ category }}" class="card-container">  
+ 
+  <!-- Card input section that will be displayed when adding/editing a card -->  
+  <div id="card-input-section-{{ category }}" class="add-card">
+        <textarea id="card-description-entry-{{ category }}" class="card-description-entry" placeholder="Description"></textarea>
+        
+        <!-- Action buttons -->
+        <input type="button" id="edit-card-btn-{{ category }}" class="edit-card-btn" value="Edit" onclick="enableEdit('{{ category }}')" />
+        <input type="button" id="save-card-btn-{{ category }}" class="save-card-btn" value="Save" onclick="saveCard('{{ category }}')" />
+        <input type="button" 
+        id="delete-card-btn-{{ category }}" 
+        class="delete-card-btn delete-card" 
+        value="Delete" 
+        onclick="deleteCard(null, '{{ category }}')" />
+    </div>
+   </div>
+   {% endfor %}
+</ul>
+
+<script src="{{ url_for('static', filename='main/js/createboard.js') }}"></script>
+<script src="{{ url_for('static', filename='main/js/card.js') }}"></script>
+
+{% endblock %}

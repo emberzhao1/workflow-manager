@@ -1,0 +1,8 @@
+
+/* styling the banner of the website */
+header {
+    background-color: #1D2125;
+    width: 100vw;
+    height: 10vh;
+    overflow: hidden;
+}

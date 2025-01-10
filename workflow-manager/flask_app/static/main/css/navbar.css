@@ -1,0 +1,128 @@
+/*
+Adding style (color, size, location) to the entire nav bar background
+*/
+nav {
+    background-color: #ceded7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 15vh;
+    border-bottom: 1px solid #333333; /* px to maintain same border weight across all resolutions */
+}
+
+/*
+Laying links horizontally & Adding space between each item in list
+*/
+nav li {
+    display: inline-block;
+    position: relative;
+    padding: 1vw; /* i want constant spacing for my links until they are hidden in the drop down */
+    align-items: center;
+}
+/*
+changing style of the links
+*/
+nav li a {
+    text-decoration: none;
+    color: #3a6361;
+    line-height: 35vh;
+    font-size: 1em;
+}
+
+/* Hide the checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+/*
+CSE 477 - homework 2 styling
+*/
+.assignment {
+    padding-left: 2vw;
+}
+/* styling & placing linkedln image */
+.linkedin-image {
+    object-fit: cover; /* Ensures the image doesn't get stretched */
+    transform: translateY(40%);
+    height: 3em;
+    width: 3em;
+}
+
+/* creating hover effect, lowering the opacity
+*/
+a:hover { opacity: 0.5;}
+/* color of link */
+nav a:visited { color: #3a6361;}
+/* text version of linkedin link*/
+.linkedin-text { display: none;}
+
+/* menu bar icon for dropdown */
+.menu-bar { display:none }
+
+/* Make the text shrink for homework title too */
+@media screen and (max-width: 650px) { 
+    .linkedin-image { 
+        display: none; /* Hide the image */
+    }
+
+    /* Hide links initially */
+    .dropdown {
+        display: none;
+        position: absolute; /* Keep the dropdown positioned */
+        top: 25%; 
+        right: 0; /* Ensure it's aligned to the right */
+        width: 20vw;
+        z-index: 5; /* 5 to ensure it is displayed in front of everything */
+        background-color: #d0dcca;
+        padding: 0;
+        margin: 0;
+        border: 1px solid #4d6b5b; /* px to maintain same border weight across all resolutions */
+    }
+    /* display linkedlin link instead of image */
+    .linkedin-text { 
+        display: inline;
+    }
+    /* display links in column */
+    nav li {
+        display: block;
+        text-align: right;
+    }
+
+    /* Style the image inside the label */
+    label img {
+        cursor: pointer; /* Makes the image clickable */
+    }
+
+    /* displaying and sizing the menu block */
+    .menu-bar { 
+        display: inline-block;
+        width: 9vw;
+    }
+    /* Hover effect on the menu bar */
+    label img:hover {
+        opacity: 0.9;
+        transform: scale(1.1); /* Slightly enlarge menu-bar on hover */
+        transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+    }
+
+    /* Show dropdown when checkbox is checked */
+    input[type="checkbox"]:checked ~ .dropdown {
+        display: block; /* Show the dropdown */
+    }
+    /* styling drop down links */
+    ul.dropdown li a {
+        display: flex;
+        justify-content: center; /* Center the text horizontally */
+        align-items: center; /* Center the text vertically */
+        text-align: center; /* Center the text */
+        transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    }
+
+    /* styling hovering over drop down links */
+    ul.dropdown li a:hover {
+        background-color: #9caca5;
+        opacity: 1;
+        transform: scale(1.1); /* Slightly enlarge the link on hover */
+    }
+}

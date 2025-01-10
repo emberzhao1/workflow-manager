@@ -1,0 +1,46 @@
+/* styling chatbox */
+#chat {
+    width: 80%;
+    height: 60vh; /* make vh */
+    padding: 2% 5%;
+    box-sizing: border-box;
+    border: 2px solid #ccc; /* px to maintain same border weight across all resolutions */
+    background-color: #f8f8f8;
+    font-size: 1rem;
+    resize: none;
+    overflow-y:auto;
+    margin: 0 auto; /* center chatbox */
+  }
+/* styling message box*/
+ 
+  #leave-chat {
+    margin-top: 1%;
+    padding: 1% 5%;
+    background-color: #619461;
+  }
+  /* the chat page header */
+  .chat-title {
+    text-align: center;
+  }
+  /* styling send message and leave chat boxes */
+  .chat-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2% 0;
+  }
+  
+  /* styling send chat button */
+  .send-chat {
+    width: 20% !important;
+  }
+  /* styling owner messages */
+  .owner-message {
+    color: blue;
+    text-align: right;
+  }
+  /* styling user messages */
+  .user-message {
+      color: grey;
+      text-align: left;
+  }

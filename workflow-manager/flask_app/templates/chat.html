@@ -1,0 +1,32 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<head>
+    <link rel="stylesheet"   href="{{ url_for('static', filename='main/css/chat.css') }}">
+</head>
+
+{% endblock %}
+
+<!-- left at the top for proper rendering -->
+{% block extrajs %} 
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script>
+{% endblock %}
+
+
+{% block maincontent %}
+<h1 class="chat-title">Chat</h1>
+
+<!-- chat box -->
+<div id='chat' contenteditable>    
+</div>
+<!-- inputs for chatbox -->
+<div class="chat-inputs">
+    <input type="text" id="message-box" placeholder="Enter Message" title="message input"/>
+    <input type="submit" value=" Leave Chat " id="leave-chat" class="leave-chat" title="leaving chat"/>
+</div>
+<div class="user_id" data-user-id="{{ user }}"></div>
+
+<script src="{{ url_for('static', filename='main/js/chat.js') }}"></script>
+
+{% endblock %}

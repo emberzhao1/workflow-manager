@@ -1,0 +1,100 @@
+/* setting font styles for entire website */
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: normal;
+    /* background: (url('../images/trello_background.png')); */
+}
+/* styling general body of how text flows on website*/
+body {
+    text-align: justify;
+    text-justify: inter-word;
+    /* background-color: #f8f8f8; */
+    margin: 0;
+}
+/* setting style of h1 */
+h1 {
+    font-weight: bold;
+}
+
+#create-board-inputs {
+    display: none;
+}
+/* styling "create board" and "open an existing board" buttons */
+.create-board-button, .existing-board-input {
+    background-color: #1b4e3d;
+    margin: 3%;
+    padding: 2% 8%;
+    border-radius: 10%;
+    font-size: 1.25rem;
+    color:#99b499;
+    border: none;
+    cursor: pointer;
+}
+
+.create-board-button:hover, .existing-board-input:hover {
+    opacity: 0.8;
+}
+/* styling list of existing boards */
+.board-button {
+    background-color: #99b499;
+    color: #1b4e3d;
+    border: none;
+    padding: 1%;
+    margin:1%;
+    cursor: pointer;
+}
+.board-button:hover {
+    opacity: 0.8;
+}
+/* styling create board inputs */
+.project-name, .list-of-members{
+    color: #1b4e3d;
+    padding: 1%;
+    margin:1%;
+}
+
+.new-board-input {
+    background-color: #1b4e3d;
+    color:#99b499;
+    padding: 1%;
+    margin:1%;
+}
+/* styling the sign up button */
+.sign-up {
+    text-align: center;
+    background-color:#1b4e3d;
+    color:#99b499;
+    padding: 2%;
+    width: 5%;
+    margin: 2%;
+}
+.sign-up a {
+    text-decoration: none;
+    color:#99b499;
+    cursor: pointer;
+}
+.sign-up:hover {
+    opacity: 0.8;
+}
+/* styling the sign up error message */
+.sign-up-error {
+    color:#4e1b1b;
+    padding-left: 1%;
+    font-size: 0.75rem;
+}
+/* styling signup fields */
+.email, .password {
+    color: #1b4e3d;
+    padding: 1%;
+    margin:1%;
+}
+.login-field {
+    background-color: #1b4e3d;
+    color:#99b499;
+    padding: 1%;
+    margin:1%;
+    cursor: pointer;
+}
+.login-field:hover {
+    opacity: 0.8;
+}

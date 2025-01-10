@@ -1,0 +1,109 @@
+/* styling backgroun image */
+body {
+    background: url('../images/trello_background.png');
+    background-size: cover;
+    background-position: center;
+}
+/* styling the board name */
+.board-title {
+    font-size: 2rem;
+    text-align: center;
+    background-color: hsl(216, 29%, 75%,0.7);
+    color:#0056b3;
+    padding: 2%;
+}
+/* styling the "lists" header */
+.list-header {
+    font-size: 1.75rem;
+    font-weight: bold;
+    padding-left: 1%;
+    color:#04284f;
+}
+.drop-list {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #171b1f;
+    background-color:hsl(211, 100%, 35%,0.2);
+    padding: 2%;
+}
+/* 
+making sure save button & edit & delete buttons are not displayed initially */
+.save-card, #add-card-inputs {
+    display: none;
+}
+.save-card-btn {
+    display: none;
+ }
+/* syling edit/delete & save buttons */
+.edit-card, .delete-card, .save-card, .save-card-btn, .edit-card-btn  {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 1% 2%;
+    margin: 0 1%;
+    cursor: pointer;
+    border-radius: 2%;
+}
+.edit-card:hover, .delete-card:hover,  .save-card:hover {
+    background-color: #0056b3;
+}
+/* styling chat box */
+.chat-link {
+    background-color: #adbcd2;  
+    border-radius: 2%;  
+    width: 5%;
+    color:#0056b3;
+    padding: 1%;  
+    margin: 1%;
+}
+/* styling the chat link */
+li.chat-link {
+    list-style-type: none;
+    text-align: center;
+ }
+ li.chat-link a, li.chat-link a:visited{
+    text-decoration: none;
+  }
+/* styling the cards */
+.card, .add-card {    
+    width: 100%; 
+    max-width: 30%;  
+    word-wrap: break-word; 
+    overflow-y: auto;
+    max-height: 15%;
+    padding: 2%;   
+    background-color: #fff;  
+    border: 1px solid #ddd;  
+    border-radius: 4%;  
+    padding: 1%;  
+    margin: 1%;
+    box-shadow: 0 0 1% rgba(0, 0, 0, 0.1);  
+    cursor: pointer;
+ }  
+ /* hide add card inputs */
+.add-card {
+    display: none;
+}
+/* styling add card button */
+.add-card-button {
+    background-color: #909acc;  
+    font-size: 1rem;
+    color:#04284f;
+    width: 40%;
+    border: 1px solid #ddd;  
+    border-radius: 2%;  
+    padding: 1%;  
+    margin: 1%;
+    box-shadow: 0 0 1% rgba(0, 0, 0, 0.1);  
+    cursor: pointer;
+}
+/* stylign card actions */
+ .card-actions {  
+    padding-top: 1%;  
+    border-top: 1px solid #ddd; /* px to maintain same border weight across all resolutions */
+ }  
+   
+ .card-actions input[type="button"] {  
+    margin-right: 2%;  
+ }

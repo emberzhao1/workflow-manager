@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSE 477 Final</title>
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/main.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/navbar.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/footer.css')  }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/header.css')  }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='main/images/favicon.ico') }}">
+  {% block extracss %}{% endblock %}
+  
+  {% block extrajs %}{% endblock %}
+</head>
+
+<body>
+  
+    <article>
+    <!-- The header  -->
+    <header>
+       
+    </header>
+    <!-- The navigation bar -->
+    <nav>
+        <p class="assignment"> Welcome, {{ user }}!</p>
+        <ul class="dropdown">
+          <li class="homepage"><a href="{{ url_for('home') }}">Homepage</a></li>
+          {% if user and user != "Unknown" %}
+            <li class="logout"><a href="/logout">Logout</a></li>
+          {% else %}
+            <li class="login"><a href="/login">Login</a></li>
+          {% endif %}
+        </ul>
+    </nav>
+
+    <main>
+      {% block maincontent %}{% endblock %}
+    </main>
+
+    <!-- The footer of the file -->
+    <footer>
+        <p>© 2024 Emberlynn C. Zhao</p>
+    </footer>
+    <script src="{{ url_for('static', filename='main/js/main.js') }}"></script>
+
+    </article>
+  
+</body>
+</html>

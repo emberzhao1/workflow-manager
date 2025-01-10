@@ -1,0 +1,35 @@
+/* styling login title */
+.login-title {
+    text-align: center;
+}
+
+/* styling email and password field */
+.email-field,.password-field {
+    width: 100%;
+    padding: 1% 5%;
+    margin: 2% auto;
+    /* display: block; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc; /* px to maintain same border weight across all resolutions */
+    font-size: 1rem;
+}
+/* styling login field */
+.login-field {
+    width: 80%;
+    padding: 1% 5%;
+    margin: 2% auto;
+    display: block;
+    border: 1px solid #ccc; /* px to maintain same border weight across all resolutions */
+    background-color:  #45a049;
+    color:#204722;
+    font-size: 1rem;
+    cursor: pointer;
+}
+/* styling authentication error text */
+.login-error {
+    text-align: center;
+    color:#a04545;
+}

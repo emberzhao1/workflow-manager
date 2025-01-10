@@ -1,0 +1,25 @@
+% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<head>
+      <link rel="stylesheet"   href="{{ url_for('static', filename='main/css/login.css') }}">
+  </head>
+<br><br>
+<h1 class="login-title"> Login</h1>
+<!-- the login email, password inputs as well as login submit button -->
+<div class="login-credentials">
+      <input type="text" id="email" class="email-field" name="login-email" placeholder="Your Email" title="Login Email">
+      <input type="password" id="password" class="password-field" name="password" placeholder="Your Password" title="Login Password">
+      <input type="submit" value=" Login " id="submit-login" class="login-field" onclick="checkCredentials()" title="Login button"/>
+</div>
+<div class="sign-up">
+      <a href="{{ url_for( 'signup' ) }}"> Sign up </a>
+</div>
+<!-- authentication error tracker -->
+<p id="login-error" class="login-error"></p>
+{% endblock %}
+
+{% block extrajs %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="{{ url_for('static', filename='main/js/login.js') }}"></script>
+{% endblock %}

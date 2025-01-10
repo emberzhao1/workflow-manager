@@ -1,0 +1,25 @@
+{% extends 'shared/layout.html' %}
+{% block extrajs %} 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}
+{% block maincontent %}
+
+<input type="button" value=" Create Board " id="create-board-button" class="create-board-button" onclick="createBoardForm()" title="Create Board button"/>
+<!-- create board input & button -->
+<div id="create-board-inputs">
+  <form id="create-board-form">
+    <input type="text" id="project-name" class="project-name" placeholder="Your Name of Project" title="Name of Project" />
+    <input type="text" id="list-of-members" class="list-of-members" placeholder="Your Member's Emails Separated by Commas" title="List of Member Emails" />
+    <input type="button" id="create-board-submit" class="new-board-input" title="Create New Board" onclick="createBoard(event)" value="Create New Board"/>
+  </form>
+</div>
+<!-- existing board list & button -->
+<input type="button" id="existing-board-input" class="existing-board-input" value="Open an existing Board" title="Displaying a list of existing boards" />
+<ul id="board-list"></ul>
+<hr>
+
+<script src="{{ url_for('static', filename='main/js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='main/js/createboard.js') }}"></script>
+<script src="{{ url_for('static', filename='main/js/selectboard.js') }}"></script>
+{% endblock %}
+

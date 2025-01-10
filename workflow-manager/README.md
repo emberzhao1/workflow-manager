@@ -1,0 +1,1 @@
+This project was for my Web Development course and showcases a comprehensive front-end and backend design using socketing and web-base APIs.
